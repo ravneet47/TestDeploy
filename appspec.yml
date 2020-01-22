@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /space-science/upload/sample.war
-    destination: mkdir /tmp/codedeploy-deployment-staging-area/
+    destination: /tmp/codedeploy-deployment-staging-area/
   - source: /scripts/changePort.sh
     destination: /tmp/codedeploy-deployment-staging-area/
 hooks:
