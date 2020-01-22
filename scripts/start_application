@@ -9,7 +9,7 @@ SERVER_HTTP_PORT='80'
 
 TEMP_STAGING_DIR='/tmp/codedeploy-deployment-staging-area'
 WAR_STAGED_LOCATION="$TEMP_STAGING_DIR/sample.war"
-HTTP_PORT_CONFIG_XSL_LOCATION="$TEMP_STAGING_DIR/configure_http_port.xsl"
+#HTTP_PORT_CONFIG_XSL_LOCATION="$TEMP_STAGING_DIR/configure_http_port.xsl"
 
 # In Tomcat, ROOT.war maps to the server root
 if [[ "$DEPLOY_TO_ROOT" = 'true' ]]; then
@@ -28,8 +28,9 @@ fi
 cp $WAR_STAGED_LOCATION $CATALINA_HOME/webapps/$CONTEXT_PATH.war
 
 # Configure the Tomcat server HTTP connector
-{ which xsltproc; } || { yum install xsltproc; } || { apt-get install xsltproc; }
-cp $CATALINA_HOME/conf/server.xml $CATALINA_HOME/conf/server.xml.bak
-xsltproc $HTTP_PORT_CONFIG_XSL_LOCATION $CATALINA_HOME/conf/server.xml.bak > $CATALINA_HOME/conf/server.xml
+#{ which xsltproc; } || { yum install xsltproc; } || { apt-get install xsltproc; }
+#cp $CATALINA_HOME/conf/server.xml $CATALINA_HOME/conf/server.xml.bak
+#xsltproc $HTTP_PORT_CONFIG_XSL_LOCATION $CATALINA_HOME/conf/server.xml.bak > $CATALINA_HOME/conf/server.xml
 
 service tomcat7 start
+service tomcat7 run
