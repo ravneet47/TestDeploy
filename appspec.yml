@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /space-science/upload/sample.war
     destination: mkdir /tmp/codedeploy-deployment-staging-area/
-  - source: /scripts/configure_http_port.xsl
+  - source: /scripts/changePort.sh
     destination: /tmp/codedeploy-deployment-staging-area/
 hooks:
   ApplicationStop:
@@ -11,6 +11,7 @@ hooks:
       timeout: 300
   BeforeInstall:
     - location: scripts/install_dependencies
+    - location: scripts/changePort.sh
       timeout: 300
   ApplicationStart:
     - location: scripts/write_codedeploy_config.sh
