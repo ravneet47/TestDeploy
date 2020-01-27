@@ -5,6 +5,9 @@
 sudo yum install java-1.8.0 -y
 sudo yum remove java-1.7.0-openjdk -y
 
+sudo yum install java-devel -y
+
+
 sudo mkdir /tmp/codedeploy-deployment-staging-area/
 
 exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
