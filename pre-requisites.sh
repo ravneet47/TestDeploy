@@ -6,14 +6,15 @@ sudo yum install java-1.8.0 -y
 sudo yum remove java-1.7.0-openjdk -y
 
 sudo mkdir /tmp/codedeploy-deployment-staging-area/
-
+sudo yum install git -y
 
 #------------------Installing Jenkins-------------------
 
-sudo yum update
+sudo yum update -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
 sudo rpm --import http://pkg.jenkins-ci.org/redhat-stable/jenkins-ci.org.key
 sudo yum install jenkins -y
+sudo chkconfig jenkins off
 
 #------------------------------------------------------
 
