@@ -4,6 +4,7 @@
 
 sudo yum install java-1.8.0 -y
 sudo yum remove java-1.7.0-openjdk -y
+sudo yum install java-devel -y
 
 sudo mkdir /tmp/codedeploy-deployment-staging-area/
 sudo yum install git -y
