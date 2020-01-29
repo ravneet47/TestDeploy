@@ -3,8 +3,6 @@ os: linux
 files:
   - source: /space-science/upload/sample.war
     destination: /tmp/codedeploy-deployment-staging-area/
-  - source: /scripts/changePort.sh
-    destination: /tmp/codedeploy-deployment-staging-area/
 hooks:
   ApplicationStop:
     - location: scripts/stop_application
