@@ -10,7 +10,6 @@ hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
     - location: scripts/changePort.sh
-    - location: scripts/tomcat_autostartup.sh
       timeout: 300
   ApplicationStart:
     - location: scripts/write_codedeploy_config.sh
