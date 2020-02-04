@@ -46,6 +46,7 @@ cat > /etc/init.d/tomcat7 <<'EOF'
 #!/bin/bash
 # description: Tomcat7 Start Stop Restart
 # processname: tomcat7
+# chkconfig: 234 20 80
 PATH=$JAVA_HOME/bin:$PATH
 export PATH
 CATALINA_HOME='/usr/share/tomcat7-codedeploy'
